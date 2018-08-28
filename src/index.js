@@ -21,9 +21,16 @@ self.MonacoEnvironment = {
 
 let editor = monaco.editor.create(document.getElementById('container'), {
   value: [
-    'function x() {',
-    '\tconsole.log("Hello world!");',
-    '}'
+  'Here are lines that are either unchanged from the common',
+  'ancestor, or cleanly resolved because only one side changed.',
+  '<<<<<<< yours:sample.txt',
+  'Conflict resolution is hard;',
+  'let\'s go shopping.',
+  'Conflict resolution is hard.',
+  '=======',
+  'Git makes conflict resolution easy.',
+  '>>>>>>> theirs:sample.txt',
+  'And here is another line that is cleanly resolved or unmodified.',
   ].join('\n'),
   language: 'json'
 });

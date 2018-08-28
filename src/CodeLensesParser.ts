@@ -22,24 +22,20 @@ export default function (editor: any, model: any, conflicts: any) {
   let codeLenses = [];
   var commandId = editor.addCommand(0, function (ctx: any, args: any) {
     // services available in `ctx`
-    let model;
     switch (args.type) {
       case 'current':
-        model = editor.getModel();
         model.pushEditOperations([new window.monaco.Selection(args.range.startLineNumber, 1, args.range.startLineNumber, 1)], [{
           range: args.range,
           text: args.content
         }]);
         break;
       case 'incoming':
-        model = editor.getModel();
         model.pushEditOperations([new window.monaco.Selection(args.range.startLineNumber, 1, args.range.startLineNumber, 1)], [{
           range: args.range,
           text: args.content
         }]);
         break;
       case 'both':
-      model = editor.getModel();
         model.pushEditOperations([new window.monaco.Selection(args.range.startLineNumber, 1, args.range.startLineNumber, 1)], [{
           range: args.range,
           text: args.content
