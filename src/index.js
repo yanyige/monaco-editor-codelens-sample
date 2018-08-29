@@ -32,8 +32,9 @@ let editor = monaco.editor.create(document.getElementById('container'), {
   '>>>>>>> theirs:sample.txt',
   'And here is another line that is cleanly resolved or unmodified.',
   ].join('\n'),
-  language: 'json'
+  language: 'json',
 });
+
 
 
 monaco.languages.registerCodeLensProvider('json', {

@@ -50,11 +50,11 @@ export default function (editor: any, model: any, conflicts: any) {
   for(let i in conflicts) {
     let obj: any = null;
     for(let j in conflicts[i]) {
-      if (types.indexOf(j) === -1) break;
+      if (types.indexOf(j) === -1) continue;
       obj = {range: conflicts[i].range};
       obj.command = {
         id: commandId,
-        title: titles[j],
+        title: titles[j as any],
         arguments: {
           type: j,
           content: getContent(model, conflicts[i][j].content),

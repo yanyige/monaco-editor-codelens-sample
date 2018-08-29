@@ -90,7 +90,6 @@ export default class MergeConflictParser {
 			}
 
     });
-
     return completeDescriptors;
   }
 
@@ -112,6 +111,9 @@ export default class MergeConflictParser {
       },
       both: {
         content: [{...MergeConflictParser.moveForwardOnePos(model, scanned.startHeader.range), ...MergeConflictParser.shiftBackOnePos(model, scanned.splitter.range)}, {...MergeConflictParser.moveForwardOnePos(model, scanned.splitter.range), ...MergeConflictParser.shiftBackOnePos(model, scanned.endFooter.range)}],
+      },
+      splitter: {
+        header: scanned.splitter.range
       },
       range: {
         ...MergeConflictParser.getStartPos(model, scanned.startHeader.range),
